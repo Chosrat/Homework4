@@ -29,12 +29,10 @@ public class Controller {
 
 
     public CurrencyDTO findAccount(int currencyId) {
-        return bankDB.findAccountByAcctNo(currencyId);
+        return bankDB.findAccount(currencyId);
     }
     
     public double convert(double amountToConvert, double rateChange){
-        System.out.println(amountToConvert);
-        System.out.println(rateChange);
         return converter.convertAmount(amountToConvert, rateChange);
     }
 

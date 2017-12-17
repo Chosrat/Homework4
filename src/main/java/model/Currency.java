@@ -16,9 +16,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * A persistent representation of an account.
- */
+
 @Entity
 public class Currency implements CurrencyDTO, Serializable {
     @Id

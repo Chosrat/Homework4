@@ -26,12 +26,12 @@ public class dbDAO {
     private EntityManager em;
 
 
-    public Currency findAccountByAcctNo(int currencyId) {
-        Currency account = em.find(Currency.class, currencyId);
-        if (account == null) {
+    public Currency findAccount(int currencyId) {
+        Currency currency = em.find(Currency.class, currencyId);
+        if (currency == null) {
             throw new EntityNotFoundException("No currency with number " + currencyId);
         }
-        return account;
+        return currency;
     }
     
 }

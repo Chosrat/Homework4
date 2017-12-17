@@ -10,9 +10,9 @@
         <h1>Currency Converter</h1>
 
         <h:form>
-            <h3>Value to convert</h3>
+            
             <p>
-                <h:outputLabel for="amountToConvert" value="Account Number: "/>
+                <h:outputLabel for="amountToConvert" value="Value to convert: "/>
                 <h:inputText id="amountToConvert" value="#{converterManager.amountToConvert}"/>
             </p>
             <p>
@@ -33,7 +33,7 @@
                 </h:selectOneMenu>
             </p>
             <p>
-                <h:commandButton value="Search" action="#{converterManager.convertAmount}"/>
+                <h:commandButton value="Convert" action="#{converterManager.convertAmount}"/>
             </p>
 
         </h:form>
