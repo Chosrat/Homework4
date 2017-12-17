@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Currency Converter</title>
+    </h:head>
+    <h:body>
+        <h1>Currency Converter</h1>
+
+        <h:form>
+            <h3>Value to convert</h3>
+            <p>
+                <h:outputLabel for="amountToConvert" value="Account Number: "/>
+                <h:inputText id="amountToConvert" value="#{converterManager.amountToConvert}"/>
+            </p>
+            <p>
+                Currency:
+                <h:selectOneMenu value="#{converterManager.searchCurrencyId}">
+                    <f:selectItem itemValue="1" itemLabel="USD to SEK"/>
+                    <f:selectItem itemValue="2" itemLabel="USD to EUR"/>
+                    <f:selectItem itemValue="3" itemLabel="USD to GPB"/>
+                    <f:selectItem itemValue="4" itemLabel="EUR to SEK"/>
+                    <f:selectItem itemValue="5" itemLabel="EUR to GPB"/>
+                    <f:selectItem itemValue="6" itemLabel="EUR to USD"/>
+                    <f:selectItem itemValue="8" itemLabel="SEK to USD"/>
+                    <f:selectItem itemValue="9" itemLabel="SEK to GPB"/>
+                    <f:selectItem itemValue="10" itemLabel="SEK to EUR"/>
+                    <f:selectItem itemValue="11" itemLabel="GPB to SEK"/>
+                    <f:selectItem itemValue="12" itemLabel="GPB to EUR"/>
+                    <f:selectItem itemValue="13" itemLabel="GPB to USD"/>
+                </h:selectOneMenu>
+            </p>
+            <p>
+                <h:commandButton value="Search" action="#{converterManager.convertAmount}"/>
+            </p>
+
+        </h:form>
+                
+        <h3>Converted value</h3>        
+        <p>
+            <h:outputLabel for="amountToConvert" rendered="#{converterManager.amountToConvert != null}"  value="Converted Amount: "/>
+            <h:outputText id="amountToConvert" value="#{converterManager.amountToConvert}"/>
+            <br></br>
+            <h:outputLabel for="convertedAmount" rendered="#{converterManager.convertedAmount != null}"  value=" New value is: "/>
+            <h:outputText id="convertedAmount" value="#{converterManager.convertedAmount}"/>
+
+        </p>
+
+
+    </h:body>
+</html>
+
